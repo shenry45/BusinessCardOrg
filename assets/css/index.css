@@ -126,3 +126,125 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+body {
+  width: 100%;
+  font-size: 62.5%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "'Cabin', Verdana, sans-serif";
+}
+h1 {
+  font-size: 2.4rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.8rem;
+}
+p {
+  font-size: 1.6rem;
+}
+div {
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+img {
+  width: 100%;
+}
+.mobile {
+  display: visible;
+}
+.desktop {
+  display: none;
+}
+.mobile {
+  display: block;
+}
+.mobile .active {
+  display: flex;
+}
+.mobile a {
+  font-size: 2.5rem;
+  color: #FFF;
+}
+.mobile a.nav {
+  position: fixed;
+  left: 30px;
+  top: 30px;
+  padding: 0;
+  z-index: 2;
+}
+.mobile a.nav a:hover {
+  background: #459693;
+}
+.mobile a.nav i {
+  font-size: 2.75rem;
+  color: #000;
+}
+.mobile nav {
+  display: none;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #459693;
+  height: 100%;
+  animation: fadeIn 0.15s ease-out forwards;
+}
+.mobile nav a {
+  padding: 30px;
+}
+.mobile div {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+section.hero {
+  width: 100%;
+  min-height: 260px;
+  background-image: url('/assets/img/computer.jpg');
+  background-position: center;
+  background-size: cover;
+}
+/*------------------------
+ANIMATIONS
+------------------------*/
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: opacity(0);
+  }
+  100% {
+    opacity: 1;
+    filter: opacity(1);
+  }
+}
+/*------------------------
+MEDIA QUERIES 
+------------------------*/
+@media (min-width: 700px) {
+  .mobile {
+    display: none;
+  }
+}
+@media (min-width: 800px) {
+  .mobile {
+    display: none;
+  }
+}
