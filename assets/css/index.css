@@ -126,9 +126,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+* {
+  font-family: "Helvetica, sans-serif";
+}
 body {
   width: 100%;
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 h1,
 h2,
@@ -156,9 +160,33 @@ div {
 a {
   text-decoration: none;
   cursor: pointer;
+  color: #000;
+}
+a:hover {
+  color: #5BB3B0;
 }
 img {
   width: 100%;
+}
+.logo {
+  width: 70px;
+  height: 70px;
+}
+.login,
+.register {
+  padding: 7px 10px;
+  border-radius: 5px;
+  color: #fff;
+}
+.login:hover,
+.register:hover {
+  background: #459693;
+}
+.login {
+  background: #5BB3B0;
+}
+.register {
+  background: #459693;
 }
 .mobile {
   display: visible;
@@ -173,7 +201,7 @@ img {
   display: flex;
 }
 .mobile a {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   color: #FFF;
 }
 .mobile a.nav {
@@ -213,14 +241,32 @@ img {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  padding: 30px 0;
   margin: 0 auto;
 }
+.mobile div img {
+  width: 70px;
+  height: 70px;
+}
 section.hero {
-  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  padding-bottom: 100px;
   min-height: 260px;
   background-image: url('/assets/img/computer.jpg');
-  background-position: center;
-  background-size: cover;
+  background-position: 47%;
+  background-size: 135%;
+  background-repeat: no-repeat;
+}
+section.hero a {
+  padding: 15px 25px;
+  margin: 0 10px;
+  font-size: 1.2rem;
+}
+section.hero img {
+  display: none;
 }
 /*------------------------
 ANIMATIONS
@@ -242,8 +288,39 @@ MEDIA QUERIES
   .mobile {
     display: none;
   }
+  .desktop {
+    display: block;
+  }
+  div.desktop {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  div.desktop div,
+  div.desktop nav {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+  div.desktop div a,
+  div.desktop nav a {
+    margin: 0 10px;
+    font-size: 1.1rem;
+  }
+  section.hero {
+    background: none;
+  }
+  section.hero img {
+    display: block;
+    width: 100%;
+  }
 }
 @media (min-width: 800px) {
+  body {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
   .mobile {
     display: none;
   }

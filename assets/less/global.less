@@ -1,4 +1,5 @@
-body {width: 100%; font-size: 62.5%;}
+* {font-family: @font-body;}
+body {width: 100%; font-size: 62.5%;scroll-behavior: smooth;}
 h1, h2, h3, h4, h5, h6 {font-family: @font-head;}
 h1 {font-size: 2.4rem}
 h2 {font-size: 2.0rem}
@@ -8,8 +9,23 @@ div {width: 100%}
 a {
   text-decoration: none;
   cursor: pointer;
+  color: #000;
+
+  &:hover {color: @brand-color;}
 }
 img {width: 100%}
+.logo {width:70px;height: 70px;}
+
+.login, .register {
+  padding: 7px 10px;
+  border-radius: 5px;
+  color: #fff;
+
+  &:hover {background: @brand-color-dark}
+}
+
+.login {background: @brand-color;}
+.register {background: @brand-color-dark;}
 
 .mobile {display: visible;}
 .desktop {display: none;}
