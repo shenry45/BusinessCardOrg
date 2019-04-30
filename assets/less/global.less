@@ -1,11 +1,15 @@
 * {font-family: @font-body;}
-body {width: 100%; font-size: 62.5%;scroll-behavior: smooth;}
+html {scroll-behavior: smooth;}
+body {width: 100%; font-size: 62.5%;}
 h1, h2, h3, h4, h5, h6 {font-family: @font-head;}
 h1 {font-size: 2.4rem}
 h2 {font-size: 2.0rem}
 h3 {font-size: 1.8rem}
-p {font-size: 1.6rem}
+h4 {font-size: 1.6rem}
+p {font-size: 1.5rem}
 div {width: 100%}
+img {width: 100%}
+.logo {width:70px;height: 70px;}
 a {
   text-decoration: none;
   cursor: pointer;
@@ -13,8 +17,13 @@ a {
 
   &:hover {color: @brand-color;}
 }
-img {width: 100%}
-.logo {width:70px;height: 70px;}
+hr {
+  width: 80%;
+  height:2px;
+  background: linear-gradient(to right, transparent, #000, transparent);
+  border: 0;
+  margin-bottom: 20px;
+}
 
 .login, .register {
   padding: 7px 10px;

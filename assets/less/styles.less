@@ -71,7 +71,7 @@ section.hero {
   flex-flow: row nowrap;
   align-items: flex-start;
   justify-content: center;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
   min-height: 260px;
   background-image: url('/assets/img/computer.jpg');
   background-position: 47%;
@@ -82,11 +82,63 @@ section.hero {
     padding: 15px 25px;
     margin: 0 10px;
     font-size: 1.2rem;
+    box-shadow: 0 0 8px 0px #ababab;
   }
 
   img {
     display: none;
   }
+}
+
+.tagline {
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  background: #414141;
+  padding: 30px 50px;
+  color: #f9f9f9;
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+section.services {
+  display: flex;
+  flex-flow: column;
+
+  h4 {
+    text-align: center;
+  }
+  
+  div.items {
+    display: flex;
+    flex-flow: column nowrap;
+    
+    img {
+      display: none;
+      border-radius: 10px 10px 0 0;
+      border-bottom: 3px solid #d5d5d5;
+    }
+  
+    h4 {
+      font-family: @font-head;
+      font-style: italic;
+      text-align: center;
+      font-size: 1.4rem;
+      padding: 10px;
+    }
+    
+    div {
+      width: 80%;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      border: 2px solid #5BB3B0;
+      background: @brand-color-dark;
+      border-radius: none;
+      color: white;
+    }
+  }
+
+
 }
 
 /*------------------------
@@ -126,6 +178,7 @@ MEDIA QUERIES
     }
   }
 
+
   section.hero {
     background: none;
 
@@ -134,9 +187,51 @@ MEDIA QUERIES
       width: 100%
     }
   }
+
+  section.services {
+
+    div.items {
+      flex-flow: row wrap;
+
+      img {
+        display: block;
+      }
+
+      div {
+        width: 45%;
+        border-radius: 10px;
+      }
+    }
+  }
 }
 
 @media (min-width: @desktop) {
-  body {max-width: 1100px; margin: 0 auto;}
   .mobile {display: none;}
+
+  
+  header, section, .tagline, footer {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h2.tagline {
+    max-width: 100%;
+  }
+
+  section.services {
+
+    div.items {
+      flex-flow: row nowrap;
+
+      img {
+        display: block;
+      }
+
+      div {
+        width: 250px;
+        border-radius: 10px;
+      }
+    }
+  }
 }
