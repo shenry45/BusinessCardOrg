@@ -9,3 +9,13 @@ const hideMenu = () => {
 
 mobileLinks.forEach(el => el.addEventListener('click', hideMenu));
 mobileNav.addEventListener('click', hideMenu);
+
+// form 'validator'
+const validateForm = () => {
+
+  const error = document.createElement('p');
+  error.innerHTML = `<p class="form-error">Something went wrong! Please contact an administrator for help.</p>`;
+
+  const contactSect = document.querySelector('section.contact');
+  contactSect.appendChild(error);
+}

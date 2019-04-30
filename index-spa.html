@@ -13,7 +13,7 @@
 <body>
   <header>
     <div class="mobile">
-      <a href="#" class="nav"><i class="far fa-plus-square"></i></a>
+      <a href="#" class="nav" onclick="return false"><i class="far fa-plus-square"></i></a>
 
       <nav>
         <a href="#services">Services</a>
@@ -124,7 +124,8 @@
 
   <a name="contact"></a>
   <section class="contact">
-    <h3></h3>
+    <h4>Contact <strong>Us</strong></h4>
+    <hr>
     <form action="#">
       <div>
         <label for="name">Name</label>
@@ -134,12 +135,17 @@
         <label for="email">Email</label>
         <input type="text" id="email">
       </div>
-      <fieldset></fieldset>
     </form>
+    <label for="message">Message</label>
+    <textarea id="message"></textarea>
+    <button onclick="validateForm()">Submit</button>
+    
   </section>
 
   <footer>
-    <p>Copyright © 2019. All rights reserved.</p>
+    <div class="section-cont">
+      <p>Copyright © 2019. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="/assets/js/app.js"></script>
