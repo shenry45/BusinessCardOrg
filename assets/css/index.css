@@ -414,6 +414,31 @@ section.about .section-cont .call-to-action {
 section.about .section-cont .call-to-action h3 {
   margin-bottom: 30px;
 }
+section.about-main hr {
+  background: linear-gradient(to right, #000, transparent);
+  width: 100%;
+}
+section.about-main div.team {
+  display: flex;
+  flex-flow: row wrap;
+}
+section.about-main div.team div {
+  width: 49%;
+}
+section.about-main div.team div img {
+  border-radius: 50%;
+  border: 5px solid #5BB3B0;
+  margin-bottom: 10px;
+}
+section.about-main div.team div p.name {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+section.about-main div.team div p.role {
+  text-align: center;
+  font-size: 1rem;
+}
 section.contact {
   padding-left: 50px;
   padding-right: 50px;
@@ -432,6 +457,55 @@ section.contact button {
   background: #459693;
   color: #fff;
   font-size: 1.4rem;
+}
+section.testimonials {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+section.testimonials .fas {
+  font-size: 1.45rem;
+}
+section.testimonials .fa-chevron-right {
+  margin-right: 15px;
+}
+section.testimonials .fa-chevron-left {
+  margin-left: 15px;
+}
+section.testimonials .test {
+  width: 100%;
+  padding: 0 20px 20px 20px;
+}
+section.testimonials .test h4 {
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+section.testimonials .test .id-2,
+section.testimonials .test .id-3,
+section.testimonials .test .id-4 {
+  display: none;
+}
+section.testimonials .test p::before {
+  content: '"';
+  position: relative;
+  left: 19px;
+  top: 22px;
+  color: lightgray;
+  font-size: 5rem;
+  line-height: 0px;
+  z-index: -1;
+}
+section.testimonials .test p::after {
+  content: '"';
+  position: relative;
+  right: 19px;
+  top: 22px;
+  color: lightgray;
+  font-size: 5rem;
+  line-height: 0px;
+  z-index: -1;
 }
 footer {
   padding: 15px 0;
@@ -469,6 +543,10 @@ MEDIA QUERIES
     flex-flow: row;
     justify-content: space-between;
     align-items: center;
+    margin: 15px auto;
+  }
+  div.desktop img {
+    margin-right: 15px;
   }
   div.desktop div,
   div.desktop nav {
@@ -499,6 +577,9 @@ MEDIA QUERIES
     width: 45%;
     border-radius: 10px;
   }
+  section.testimonials .test {
+    width: 500px;
+  }
 }
 /***** DESKTOP *****/
 @media (min-width: 800px) {
@@ -515,6 +596,9 @@ MEDIA QUERIES
   }
   section.hero {
     padding: 0;
+  }
+  section.secondary {
+    min-height: initial;
   }
   h2.tagline {
     max-width: 100%;
@@ -561,6 +645,15 @@ MEDIA QUERIES
   section.about .section-cont .call-to-action h3 {
     margin-bottom: 15px;
   }
+  section.about-main div.team {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    margin: 50px 0;
+  }
+  section.about-main div.team div {
+    width: 150px;
+  }
   section.contact form {
     display: flex;
     flex-flow: row nowrap;
@@ -568,6 +661,9 @@ MEDIA QUERIES
   }
   section.contact div {
     width: 49%;
+  }
+  section.testimonials .test {
+    width: 700px;
   }
   footer {
     max-width: 100%;

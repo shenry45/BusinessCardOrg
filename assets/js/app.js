@@ -19,3 +19,11 @@ const validateForm = () => {
   const contactSect = document.querySelector('section.contact');
   contactSect.appendChild(error);
 }
+
+// testimonial slider
+const testSlider = document.querySelectorAll('.test');
+const testArrowR = document.querySelector('.fa-chevron-right');
+const testArrowL = document.querySelector('.fa-chevron-left');
+let sliderCounter = 0;
+
+
