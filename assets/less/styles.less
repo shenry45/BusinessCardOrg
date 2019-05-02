@@ -220,6 +220,8 @@ section.about {
 }
 
 section.about-main {
+  padding-left: 50px;
+  padding-right: 50px;
 
   hr {
     background: linear-gradient(to right, #000, transparent);
@@ -228,10 +230,12 @@ section.about-main {
 
   div.team {
     display: flex;
-    flex-flow:row wrap;
+    flex-flow: row wrap;
+    justify-content: space-around;
 
     div {
-      width: 49%;
+      width: 43%;
+      margin: 15px 0 25px 0;
 
       img {
         border-radius: 50%;
@@ -249,6 +253,17 @@ section.about-main {
         text-align: center;
         font-size: 1rem;
       }
+    }
+  }
+}
+
+section.services-main {
+  padding-left: 50px;
+  padding-right: 50px;
+
+  .service-list {
+    div {
+      width: 100%;
     }
   }
 }
@@ -351,14 +366,19 @@ ANIMATIONS
 MEDIA QUERIES 
 ------------------------*/
 @media (min-width: @tablet) {
+  header {
+    padding: 0 15px;
+  }
+
   .mobile {display: none;}
   .desktop {display: block;}
+
   div.desktop {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
     align-items: center;
-    margin: 15px auto;
+    margin: 15px 0;
 
     img {
       margin-right: 15px;
@@ -368,9 +388,10 @@ MEDIA QUERIES
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
+      width: initial;
 
       a {
-        margin: 0 10px;
+        margin: 0 0 0 15px;
         font-size: 1.1rem;
       }
     }
@@ -380,10 +401,18 @@ MEDIA QUERIES
   section.hero {
     background: none;
     padding: 0;
+    overflow: hidden;
 
     img {
       display: block;
-      width: 100%
+    }
+  }
+
+  section.secondary {
+    max-height: 100px;
+
+    img {
+      width: 200%;
     }
   }
 
@@ -403,12 +432,55 @@ MEDIA QUERIES
     }
   }
 
+  section.about-main {
+    div.team {
+      div {
+        width: 125px;
+        margin: 0 15px 25px 0;
+      }
+    }
+  }
+  
+  section.services-main {
+    padding: 30px 50px;
+  
+    .service-list {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 30px;
+  
+      div {
+        width: 45%;
+        margin-bottom: 20px;
+
+        img {
+          margin-bottom: 15px;
+        }
+        
+        .expandable {
+          width: 100%;
+          
+          p {
+            width: 100%;
+            font-size: 1.3rem;
+          }
+        }
+  
+      }
+    }
+  }
+
+  
   section.testimonials {
     .test {
       width: 500px;
     }
   }
 }
+
+
 
 /***** DESKTOP *****/
 
@@ -422,12 +494,31 @@ MEDIA QUERIES
     margin-right: auto;
   }
 
+  header {
+    padding: 0;
+  
+    .desktop {
+
+      div {
+
+        a {
+          margin: 0;
+        }
+      }
+    }
+  }
+
   section.hero {
     padding: 0;
   }
 
   section.secondary {
     min-height: initial;
+    max-height: initial;
+    
+    img {
+      width: 100%;
+    }
   }
 
   h2.tagline {
@@ -500,6 +591,19 @@ MEDIA QUERIES
       
       div {
         width: 150px;
+        margin: 0 15px 25px 0;
+      }
+    }
+  }
+
+  section.services-main {
+    
+    .service-list {
+      flex-flow: row nowrap;
+  
+      div.expandable {
+        width: initial;
+        padding: 15px;
       }
     }
   }

@@ -414,6 +414,10 @@ section.about .section-cont .call-to-action {
 section.about .section-cont .call-to-action h3 {
   margin-bottom: 30px;
 }
+section.about-main {
+  padding-left: 50px;
+  padding-right: 50px;
+}
 section.about-main hr {
   background: linear-gradient(to right, #000, transparent);
   width: 100%;
@@ -421,9 +425,11 @@ section.about-main hr {
 section.about-main div.team {
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-around;
 }
 section.about-main div.team div {
-  width: 49%;
+  width: 43%;
+  margin: 15px 0 25px 0;
 }
 section.about-main div.team div img {
   border-radius: 50%;
@@ -438,6 +444,13 @@ section.about-main div.team div p.name {
 section.about-main div.team div p.role {
   text-align: center;
   font-size: 1rem;
+}
+section.services-main {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+section.services-main .service-list div {
+  width: 100%;
 }
 section.contact {
   padding-left: 50px;
@@ -531,7 +544,10 @@ ANIMATIONS
 /*------------------------
 MEDIA QUERIES 
 ------------------------*/
-@media (min-width: 700px) {
+@media (min-width: 730px) {
+  header {
+    padding: 0 15px;
+  }
   .mobile {
     display: none;
   }
@@ -543,7 +559,7 @@ MEDIA QUERIES
     flex-flow: row;
     justify-content: space-between;
     align-items: center;
-    margin: 15px auto;
+    margin: 15px 0;
   }
   div.desktop img {
     margin-right: 15px;
@@ -553,19 +569,26 @@ MEDIA QUERIES
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    width: initial;
   }
   div.desktop div a,
   div.desktop nav a {
-    margin: 0 10px;
+    margin: 0 0 0 15px;
     font-size: 1.1rem;
   }
   section.hero {
     background: none;
     padding: 0;
+    overflow: hidden;
   }
   section.hero img {
     display: block;
-    width: 100%;
+  }
+  section.secondary {
+    max-height: 100px;
+  }
+  section.secondary img {
+    width: 200%;
   }
   section.services div.items {
     flex-flow: row wrap;
@@ -577,12 +600,40 @@ MEDIA QUERIES
     width: 45%;
     border-radius: 10px;
   }
+  section.about-main div.team div {
+    width: 125px;
+    margin: 0 15px 25px 0;
+  }
+  section.services-main {
+    padding: 30px 50px;
+  }
+  section.services-main .service-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+  }
+  section.services-main .service-list div {
+    width: 45%;
+    margin-bottom: 20px;
+  }
+  section.services-main .service-list div img {
+    margin-bottom: 15px;
+  }
+  section.services-main .service-list div .expandable {
+    width: 100%;
+  }
+  section.services-main .service-list div .expandable p {
+    width: 100%;
+    font-size: 1.3rem;
+  }
   section.testimonials .test {
     width: 500px;
   }
 }
 /***** DESKTOP *****/
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .mobile {
     display: none;
   }
@@ -594,11 +645,21 @@ MEDIA QUERIES
     margin-left: auto;
     margin-right: auto;
   }
+  header {
+    padding: 0;
+  }
+  header .desktop div a {
+    margin: 0;
+  }
   section.hero {
     padding: 0;
   }
   section.secondary {
     min-height: initial;
+    max-height: initial;
+  }
+  section.secondary img {
+    width: 100%;
   }
   h2.tagline {
     max-width: 100%;
@@ -653,6 +714,14 @@ MEDIA QUERIES
   }
   section.about-main div.team div {
     width: 150px;
+    margin: 0 15px 25px 0;
+  }
+  section.services-main .service-list {
+    flex-flow: row nowrap;
+  }
+  section.services-main .service-list div.expandable {
+    width: initial;
+    padding: 15px;
   }
   section.contact form {
     display: flex;
