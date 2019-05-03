@@ -451,6 +451,61 @@ section.services-main {
 section.services-main .service-list div {
   width: 100%;
 }
+section.prices-main {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+section.prices-main div.price-cont {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 20px;
+  min-height: 150px;
+}
+section.prices-main div.price-cont div.price-list {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+section.prices-main div.price-cont .pkg-name,
+section.prices-main div.price-cont .pkg-perks {
+  width: 80%;
+  margin: 0 15px 0 15px;
+  padding: 15px;
+  background: #dadada;
+  text-align: center;
+}
+section.prices-main div.price-cont .pkg-name {
+  margin-top: 15px;
+  background: #414141;
+  color: #fff;
+  -webkit-clip-path: polygon(100% 0, 100% 60%, 50% 100%, 0 60%, 0 0);
+  clip-path: polygon(100% 0, 100% 60%, 50% 100%, 0 60%, 0 0);
+  position: relative;
+  top: 22px;
+}
+section.prices-main div.price-cont .pkg-perks {
+  margin-bottom: 15px;
+}
+section.prices-main div.price-cont .pkg-price {
+  color: #5BB3B0;
+  font-size: 4rem;
+  width: 100%;
+  padding: 30px 10px 10px;
+  border: 1px solid #dadada;
+  background-color: #fff;
+  text-align: center;
+}
+section.prices-main div.price-cont ul.pkg-perks {
+  font-size: 1.2rem;
+  list-style-type: square;
+  list-style-position: inside;
+  text-align: left;
+}
 section.contact {
   padding-left: 50px;
   padding-right: 50px;
@@ -627,6 +682,19 @@ MEDIA QUERIES
     width: 100%;
     font-size: 1.3rem;
   }
+  section.prices-main div.price-cont {
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 0 auto;
+    width: 60%;
+  }
+  section.prices-main div.price-cont .pkg-name,
+  section.prices-main div.price-cont .pkg-perks {
+    width: 91%;
+  }
+  section.prices-main div.price-cont div.price-list {
+    margin: 20px auto;
+  }
   section.testimonials .test {
     width: 500px;
   }
@@ -721,6 +789,19 @@ MEDIA QUERIES
   section.services-main .service-list div.expandable {
     width: initial;
     padding: 15px;
+  }
+  section.prices-main div.price-cont {
+    flex-flow: row nowrap;
+    width: 100%;
+    align-items: flex-start;
+  }
+  section.prices-main div.price-cont .pkg-name,
+  section.prices-main div.price-cont .pkg-perks {
+    width: 85%;
+  }
+  section.prices-main div.price-cont div.price-list {
+    max-width: 250px;
+    margin: 20px auto;
   }
   section.contact form {
     display: flex;

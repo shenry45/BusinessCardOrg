@@ -267,6 +267,66 @@ section.services-main {
   }
 }
 
+section.prices-main {
+  padding-left: 50px;
+  padding-right: 50px;
+
+  div.price-cont {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 20px;
+    min-height: 150px;
+
+    div.price-list { 
+      text-align: center;
+      justify-content: center;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+    }
+
+    .pkg-name, .pkg-perks {
+      width: 80%;
+      margin: 0 15px 0 15px;
+      padding: 15px;
+      background: #dadada;
+      text-align: center;
+    }
+
+    .pkg-name {
+      margin-top: 15px;
+      background: #414141;
+      color: #fff;
+      -webkit-clip-path: polygon(100% 0, 100% 60%, 50% 100%, 0 60%, 0 0);
+clip-path: polygon(100% 0, 100% 60%, 50% 100%, 0 60%, 0 0);
+      position: relative;
+      top: 22px;
+    }
+    .pkg-perks {margin-bottom: 15px;}
+
+
+    .pkg-price {
+      color: @brand-color;
+      font-size: 4.0rem;
+      width: 100%;
+      padding: 30px 10px 10px;
+      border: 1px solid #dadada;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    ul.pkg-perks {
+      font-size: 1.2rem;
+      list-style-type: square;
+      list-style-position: inside;
+      text-align: left;
+    }
+  }
+}
+
 section.contact {
   padding-left: 50px;
   padding-right: 50px;
@@ -471,6 +531,20 @@ MEDIA QUERIES
     }
   }
 
+  section.prices-main {
+    div.price-cont {
+      flex-flow: column nowrap;
+      align-items: center;
+      margin: 0 auto;
+      width: 60%;
+
+      .pkg-name, .pkg-perks {width:91%}
+
+      div.price-list {
+        margin: 20px auto;
+      }
+    }
+  }
   
   section.testimonials {
     .test {
@@ -603,6 +677,21 @@ MEDIA QUERIES
       div.expandable {
         width: initial;
         padding: 15px;
+      }
+    }
+  }
+
+  section.prices-main {
+    div.price-cont {
+      flex-flow: row nowrap;
+      width: 100%;
+      align-items: flex-start;
+
+      .pkg-name, .pkg-perks {width:85%};
+
+      div.price-list {    
+        max-width: 250px;
+        margin: 20px auto;
       }
     }
   }
