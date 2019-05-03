@@ -1,0 +1,60 @@
+* {font-family: @font-body;}
+html {scroll-behavior: smooth;}
+body {width: 100%; font-size: 62.5%;}
+h1, h2, h3, h4, h5, h6 {font-family: @font-head;}
+h1 {font-size: 2.4rem}
+h2 {font-size: 2.0rem}
+h3 {font-size: 1.8rem}
+h4 {font-size: 1.6rem}
+p {font-size: 1.5rem}
+strong{font-weight: bold;}
+div {width: 100%}
+img {width: 100%}
+sup{vertical-align: super; font-size: 1.2rem}
+label {display: block; font-size: 1.2rem}
+section{
+  padding: 30px 0;
+
+  h4 {
+    text-align: center;
+  }
+}
+.logo {width:70px;height: 70px;}
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #000;
+
+  &:hover {color: @brand-color;}
+}
+hr {
+  width: 80%;
+  height:2px;
+  background: linear-gradient(to right, transparent, #000, transparent);
+  border: 0;
+  margin-bottom: 20px;
+}
+
+.login, .register {
+  padding: 7px 10px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.2rem;
+
+  &:hover {background: @brand-color-dark};
+}
+
+.login {background: @brand-color;}
+.register {background: @brand-color-dark;}
+
+.form-error {
+  background-color: #ffe9e9;
+  color: #f00;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 15px;
+  font-size: 1.2rem;
+}
+
+.mobile {display: visible;}
+.desktop {display: none;}
