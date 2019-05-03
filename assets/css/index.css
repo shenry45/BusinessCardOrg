@@ -595,6 +595,30 @@ ANIMATIONS
     filter: opacity(1);
   }
 }
+@keyframes growUp {
+  0% {
+    width: 137px;
+    position: relative;
+    left: -2%;
+  }
+  100% {
+    width: 200px;
+    position: relative;
+    left: -17%;
+  }
+}
+@keyframes shrink {
+  0% {
+    width: 200px;
+    position: relative;
+    left: -17%;
+  }
+  100% {
+    width: 137px;
+    position: relative;
+    left: -2%;
+  }
+}
 /*------------------------
 MEDIA QUERIES 
 ------------------------*/
@@ -775,13 +799,25 @@ MEDIA QUERIES
   }
   section.about-main div.team {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-around;
     margin: 50px 0;
+    height: 271px;
   }
   section.about-main div.team div {
     width: 150px;
     margin: 0 15px 25px 0;
+  }
+  section.about-main div.team div img {
+    width: 127px;
+    position: relative;
+    left: 0;
+    z-index: 2;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+  }
+  section.about-main div.team div img:hover {
+    width: 200px;
+    left: -17%;
   }
   section.services-main .service-list {
     flex-flow: row nowrap;
