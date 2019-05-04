@@ -226,6 +226,12 @@ hr {
   margin-top: 15px;
   font-size: 1.2rem;
 }
+.slideLeft {
+  animation: slideLeft 0.75s 0.1s ease-in forwards;
+}
+.slideRight {
+  animation: slideRight 0.75s 0.1s ease-in forwards;
+}
 .mobile {
   display: visible;
 }
@@ -619,6 +625,30 @@ ANIMATIONS
     left: -2%;
   }
 }
+@keyframes slideLeft {
+  0% {
+    left: 0;
+    filter: opacity(10000%);
+    opacity: 100;
+  }
+  100% {
+    left: -100%;
+    filter: opacity(0%);
+    opacity: 0;
+  }
+}
+@keyframes slideRight {
+  0% {
+    right: 0;
+    filter: opacity(10000%);
+    opacity: 100;
+  }
+  100% {
+    right: -100%;
+    filter: opacity(0%);
+    opacity: 0;
+  }
+}
 /*------------------------
 MEDIA QUERIES 
 ------------------------*/
@@ -854,6 +884,17 @@ MEDIA QUERIES
     flex-flow: column;
     align-items: center;
     justify-content: center;
+  }
+  section.testimonials .test .testim {
+    position: relative;
+    animation: fadeIn 0.2s 0s ease-in;
+    z-index: 2;
+  }
+  section.testimonials .test .testim.slideLeft {
+    animation: slideLeft 0.75s 0.1s ease-in forwards;
+  }
+  section.testimonials .test .testim.slideRight {
+    animation: slideRight 0.75s 0.1s ease-in forwards;
   }
   footer {
     max-width: 100%;

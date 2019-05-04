@@ -27,29 +27,42 @@ const testArrowL = document.querySelector('.fa-chevron-left');
 let sliderCounter = 0;
 
 testArrowL.addEventListener('click', () => {
-  resetTestim();
+  testSlider[sliderCounter].classList.add('slideLeft');
 
-  if (sliderCounter === 0){ 
-    sliderCounter = testSlider.length-1;
-    setCurSlide();
-  }
-  else {
-    --sliderCounter;
-    setCurSlide();
-  }
+  setTimeout(function() {resetTestim()}, 1000);
+
+  setTimeout(function() {
+    if (sliderCounter === 0){
+      sliderCounter = testSlider.length-1;
+      setCurSlide();
+    }
+    else {
+      --sliderCounter;
+      setCurSlide();
+    }
+
+    testSlider.forEach(el => el.classList.remove('slideLeft'));
+  }, 1000);
+
 });
 
 testArrowR.addEventListener('click', () => {
-  resetTestim();
+  testSlider[sliderCounter].classList.add('slideRight');
 
-  if (sliderCounter === testSlider.length-1){ 
-    sliderCounter = 0;
-    setCurSlide();
-  }
-  else {
-    ++sliderCounter;
-    setCurSlide();
-  }
+  setTimeout(function() {resetTestim()}, 1000);
+
+  setTimeout(function() {
+    if (sliderCounter === testSlider.length-1){ 
+      sliderCounter = 0;
+      setCurSlide();
+    }
+    else {
+      ++sliderCounter;
+      setCurSlide();
+    }
+
+    testSlider.forEach(el => el.classList.remove('slideRight'));
+  }, 1000);
 });
 
 const resetTestim = () => {

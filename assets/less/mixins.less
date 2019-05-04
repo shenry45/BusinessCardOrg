@@ -3,3 +3,8 @@
   -webkit-transform: rotate(@angle); /* Safari 3-8 */
   transform: rotate(@angle);
 }
+
+.opacity(@value) {
+  filter:opacity(@value*100%);
+  opacity: @value;
+}
