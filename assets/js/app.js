@@ -21,7 +21,7 @@ const validateForm = () => {
 }
 
 // testimonial slider
-if (document.URL.includes('index.html')) {
+if (document.querySelector('.testim')) {
   const testSlider = document.querySelectorAll('.test .testim');
   const testArrowR = document.querySelector('.fa-chevron-right');
   const testArrowL = document.querySelector('.fa-chevron-left');
