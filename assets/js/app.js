@@ -21,9 +21,57 @@ const validateForm = () => {
 }
 
 // testimonial slider
-const testSlider = document.querySelectorAll('.test');
-const testArrowR = document.querySelector('.fa-chevron-right');
-const testArrowL = document.querySelector('.fa-chevron-left');
-let sliderCounter = 0;
-
+if (document.URL.includes('index.html')) {
+  const testSlider = document.querySelectorAll('.test .testim');
+  const testArrowR = document.querySelector('.fa-chevron-right');
+  const testArrowL = document.querySelector('.fa-chevron-left');
+  let sliderCounter = 0;
+  
+  testArrowL.addEventListener('click', () => {
+    testSlider[sliderCounter].classList.add('slideLeft');
+  
+    setTimeout(function() {resetTestim()}, 1000);
+  
+    setTimeout(function() {
+      if (sliderCounter === 0){
+        sliderCounter = testSlider.length-1;
+        setCurSlide();
+      }
+      else {
+        --sliderCounter;
+        setCurSlide();
+      }
+  
+      testSlider.forEach(el => el.classList.remove('slideLeft'));
+    }, 1000);
+  
+  });
+  
+  testArrowR.addEventListener('click', () => {
+    testSlider[sliderCounter].classList.add('slideRight');
+  
+    setTimeout(function() {resetTestim()}, 500);
+  
+    setTimeout(function() {
+      if (sliderCounter === testSlider.length-1){ 
+        sliderCounter = 0;
+        setCurSlide();
+      }
+      else {
+        ++sliderCounter;
+        setCurSlide();
+      }
+  
+      testSlider.forEach(el => el.classList.remove('slideRight'));
+    }, 800);
+  });
+  
+  const resetTestim = () => {
+    testSlider.forEach(el => el.style.display = 'none');
+  }
+  
+  const setCurSlide = () => {
+    testSlider[sliderCounter].style.display = 'block';
+  }
+}
 
