@@ -843,7 +843,7 @@ MEDIA QUERIES
     position: relative;
     left: 0;
     z-index: 2;
-    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    transition: width 0.2s ease-in-out, left 0.2s ease-in-out;
   }
   section.about-main div.team div img:hover {
     width: 200px;
