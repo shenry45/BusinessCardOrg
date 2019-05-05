@@ -7,8 +7,8 @@ const hideMenu = () => {
   mobileMenu.classList.toggle('active');
 }
 
-mobileLinks.forEach(el => el.addEventListener('click', hideMenu));
 mobileNav.addEventListener('click', hideMenu);
+mobileLinks.forEach(el => el.addEventListener('click', hideMenu));
 
 // form 'validator'
 const validateForm = () => {
@@ -75,3 +75,18 @@ if (document.querySelector('.testim') != null || document.URL.includes('index.ht
   }
 }
 
+// faq accordion
+if (document.querySelector('.faq') != null || document.URL.includes('pricing.html')) {
+  class Button {
+    constructor(el) {
+      this.el = el;
+      this.el.addEventListener('click', () => { this.expandCont() });
+    }
+    expandCont(e) {
+      console.log(e);
+    }
+  }
+
+  const faqs = document.querySelectorAll('.faq .acc p.icon').forEach(el => new Button(el));
+  
+}

@@ -327,6 +327,46 @@ clip-path: polygon(100% 0, 100% 60%, 50% 100%, 0 60%, 0 0);
   }
 }
 
+section.faq {
+  width: 90%;
+  margin: 0 auto;
+
+  .acc {
+    
+    div {
+      display:flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      padding: 10px;
+      margin-bottom: 15px;
+      width: initial;
+      border: 2px dashed @brand-color-light;
+      background: @brand-color-dark;
+      color: white;
+      font-weight: bold;
+
+      p {
+        font-size: 1.3rem;
+      }
+
+      p.icon {
+        margin-top: 15px;
+        width: 0;
+        height: 0;
+        border-left: 12px solid transparent;
+        border-top: 12px solid #000;
+        border-right: 12px solid transparent;
+      }
+    }
+  }
+
+  .acc-content {
+    div {
+      display: none;
+    }
+  }
+}
+
 section.contact {
   padding-left: 50px;
   padding-right: 50px;

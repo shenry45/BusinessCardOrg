@@ -512,6 +512,36 @@ section.prices-main div.price-cont ul.pkg-perks {
   list-style-position: inside;
   text-align: left;
 }
+section.faq {
+  width: 90%;
+  margin: 0 auto;
+}
+section.faq .acc div {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: initial;
+  border: 2px dashed #c4e3e2;
+  background: #459693;
+  color: white;
+  font-weight: bold;
+}
+section.faq .acc div p {
+  font-size: 1.3rem;
+}
+section.faq .acc div p.icon {
+  margin-top: 15px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-top: 12px solid #000;
+  border-right: 12px solid transparent;
+}
+section.faq .acc-content div {
+  display: none;
+}
 section.contact {
   padding-left: 50px;
   padding-right: 50px;
