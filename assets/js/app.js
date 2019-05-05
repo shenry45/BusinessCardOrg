@@ -91,11 +91,14 @@ if (document.querySelector('.faq') != null || document.URL.includes('pricing.htm
       if (e.target.classList.value.includes('flipUp')) {
         // remove all current el content
         resetAccCont();
-        // remove flipUp class from all icons
-        resetIcons();
+
+        this.el.classList.remove('flipUp');
+        this.el.classList.add('flipDown');
       } 
       else {
+        // remove all current el content
         resetAccCont();
+        // remove flipUp class from all icons
         resetIcons();
 
         // get data el from the content
