@@ -356,6 +356,25 @@ section.faq {
         border-left: 12px solid transparent;
         border-top: 12px solid #000;
         border-right: 12px solid transparent;
+        
+        &.flipUp {
+          animation: flipUp 0.2s 0s ease-out forwards;
+        }
+
+        &.flipDown {
+          animation: flipDown 0.2s 0s ease-out forwards;
+        }
+      }
+
+      p.acc-info {
+        font-size: 1.1rem;
+        padding: 15px;
+        background: white;
+        color: black;
+        font-weight: 100;
+        margin-top: 30px;
+        border: 1px solid #000;
+        
       }
     }
   }
@@ -502,6 +521,21 @@ ANIMATIONS
   } 100% {
     right: -100%;
     .opacity(0);
+  }
+}
+
+@keyframes flipUp {
+  0% {
+    transform: rotate(0deg);
+  } 100% {
+    transform: rotate(180deg);
+  }
+}
+@keyframes flipDown {
+  0% {
+    transform: rotate(180deg);
+  } 100% {
+    transform: rotate(359deg);
   }
 }
 
