@@ -512,6 +512,51 @@ section.prices-main div.price-cont ul.pkg-perks {
   list-style-position: inside;
   text-align: left;
 }
+section.faq {
+  width: 90%;
+  margin: 0 auto;
+}
+section.faq .acc div {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: initial;
+  border: 2px dashed #c4e3e2;
+  background: #459693;
+  color: white;
+  font-weight: bold;
+}
+section.faq .acc div p {
+  font-size: 1.3rem;
+}
+section.faq .acc div p.icon {
+  margin-top: 15px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-top: 12px solid #000;
+  border-right: 12px solid transparent;
+}
+section.faq .acc div p.icon.flipUp {
+  animation: flipUp 0.2s 0s ease-out forwards;
+}
+section.faq .acc div p.icon.flipDown {
+  animation: flipDown 0.2s 0s ease-out forwards;
+}
+section.faq .acc div p.acc-info {
+  font-size: 1.1rem;
+  padding: 15px;
+  background: white;
+  color: black;
+  font-weight: 100;
+  margin-top: 30px;
+  border: 1px solid #000;
+}
+section.faq .acc-content div {
+  display: none;
+}
 section.contact {
   padding-left: 50px;
   padding-right: 50px;
@@ -647,6 +692,22 @@ ANIMATIONS
     right: -100%;
     filter: opacity(0%);
     opacity: 0;
+  }
+}
+@keyframes flipUp {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+@keyframes flipDown {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(359deg);
   }
 }
 /*------------------------
@@ -843,7 +904,7 @@ MEDIA QUERIES
     position: relative;
     left: 0;
     z-index: 2;
-    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    transition: width 0.2s ease-in-out, left 0.2s ease-in-out;
   }
   section.about-main div.team div img:hover {
     width: 200px;

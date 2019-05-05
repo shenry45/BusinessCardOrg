@@ -7,8 +7,8 @@ const hideMenu = () => {
   mobileMenu.classList.toggle('active');
 }
 
-mobileLinks.forEach(el => el.addEventListener('click', hideMenu));
 mobileNav.addEventListener('click', hideMenu);
+mobileLinks.forEach(el => el.addEventListener('click', hideMenu));
 
 // form 'validator'
 const validateForm = () => {
@@ -21,7 +21,7 @@ const validateForm = () => {
 }
 
 // testimonial slider
-if (document.querySelector('.testim')) {
+if (document.querySelector('.testim') != null || document.URL.includes('index.html')) {
   const testSlider = document.querySelectorAll('.test .testim');
   const testArrowR = document.querySelector('.fa-chevron-right');
   const testArrowL = document.querySelector('.fa-chevron-left');
@@ -75,3 +75,69 @@ if (document.querySelector('.testim')) {
   }
 }
 
+// faq accordion
+if (document.querySelector('.faq') != null || document.URL.includes('pricing.html')) {
+
+  // create class for buttons and click
+  class Button {
+    constructor(el) {
+      this.el = el;
+      this.el.addEventListener('click', (e) => { this.expandCont(e) });
+    }
+    expandCont(e) {
+      // get parent of clicked arrow icon
+      const currAccItem = e.target.parentNode;
+
+      if (e.target.classList.value.includes('flipUp')) {
+        // remove all current el content
+        resetAccCont();
+
+        this.el.classList.remove('flipUp');
+        this.el.classList.add('flipDown');
+      } 
+      else {
+        // remove all current el content
+        resetAccCont();
+        // remove flipUp class from all icons
+        resetIcons();
+
+        // get data el from the content
+        const currAccCont = document.querySelector(`.acc-content div[data-cont="${currAccItem.dataset.acc}"] p`);
+        
+        // insert HTML content matching target dataset
+        currAccItem.insertAdjacentHTML('beforeend', `<p class="acc-info">${currAccCont.innerHTML}</p>`);
+        
+        // reset icon rotate and set clicked icon to point up
+        resetRotates();
+        this.el.classList.add('flipUp');
+      }
+
+      
+    }
+  }
+  
+  const faqs = document.querySelectorAll('.faq .acc p.icon');
+  faqs.forEach(el => new Button(el));
+
+  const resetRotates = () => {
+    faqs.forEach(el => {
+      if (el.classList.value.includes('flipUp')) {
+        el.classList.remove('flipUp')
+        el.classList.add('flipDown')
+      }
+    });
+  }
+
+  const resetAccCont = () => {
+    document.querySelectorAll('p.acc-info').forEach(el => el.parentNode.removeChild(el));
+  }
+
+  const resetIcons = () => {
+    const getIcons = document.querySelectorAll('p.icon.flipDown');
+
+    if (getIcons.length > 0) {
+      getIcons.forEach(el => el.classList.remove('flipDown'));
+    }
+  }
+
+}
