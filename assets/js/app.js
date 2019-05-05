@@ -91,14 +91,11 @@ if (document.querySelector('.faq') != null || document.URL.includes('pricing.htm
       if (e.target.classList.value.includes('flipUp')) {
         // remove all current el content
         resetAccCont();
-
-        this.el.classList.remove('flipUp');
-        this.el.classList.add('flipDown');
+        // remove flipUp class from all icons
+        resetIcons();
       } 
       else {
-        // remove all current el content
         resetAccCont();
-        // remove flipUp class from all icons
         resetIcons();
 
         // get data el from the content
@@ -120,7 +117,12 @@ if (document.querySelector('.faq') != null || document.URL.includes('pricing.htm
   faqs.forEach(el => new Button(el));
 
   const resetRotates = () => {
-    faqs.forEach(el => el.style.transform = '');
+    faqs.forEach(el => {
+      if (el.classList.value.includes('flipUp')) {
+        el.classList.remove('flipUp')
+        el.classList.add('flipDown')
+      }
+    });
   }
 
   const resetAccCont = () => {
